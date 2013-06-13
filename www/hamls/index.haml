@@ -1,0 +1,37 @@
+!!! 5
+%html(ng-app="myApp")
+  %head
+    %meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0")
+    %meta(name="apple-mobile-web-app-capable" content="yes")
+    %meta(name="apple-mobile-web-app-status-bar-style" content="black")
+    %title Title
+    %link(rel="stylesheet" type="text/css" href="lib/js/angular/mobile-nav.css")
+    %link(href="css/bootstrap.min.css" rel="stylesheet" media="screen")
+    %link(href="css/font-awesome.min.css" rel="stylesheet" media="screen")
+    %link(href="css/android.css" rel="stylesheet" media="screen")
+    %link(href="css/index.css" rel="stylesheet" media="screen")
+
+    %script(lang="javascript" src="lib/js/cordova/cordova-2.1.0.js")
+
+    -#%script(lang="javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js")
+    %script(lang="javascript" src="lib/js/angular/google-angular.min.js")
+
+    %script(lang="javascript" src="lib/js/angular/mobile-nav.min.js")
+
+    %script(lang="javascript" src="lib/js/iscroll/iscroll-lite.js")
+
+    %script(lang="javascript" src="lib/js/jquery/jquery-2.0.0.min.js")
+    %script(lang="javascript" src="lib/js/infrastructure/native.js")
+
+    %script(lang="javascript" src="lib/js/underscore/underscore-min.js")
+    -#%script(src="http://192.168.1.106:8081/target/target-script-min.js#anonymous")
+
+
+  %body(ng-controller="MainCtrl")
+    %mobile-view
+
+    =include_js
+    %script(lang="javascript" src="lib/js/angular/keypress.js")
+
+

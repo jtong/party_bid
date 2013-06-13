@@ -1,0 +1,8 @@
+source 'http://ruby.taobao.org/'
+
+gem 'haml'
+gem 'jt-partial'
+gem 'moode-haml-jqm'
+gem 'moode-haml-toolkit'
+gem 'Rwebserver'
+gem 'thor'

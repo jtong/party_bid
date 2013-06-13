@@ -1,0 +1,23 @@
+%header
+  %h4 选人
+  .header-left
+    %a.btn-primary.btn(ng-tap="back_to_index()" class="btn btn-primary" ng-show = "whether_show_back_btn")
+      &nbsp
+      返回
+      &nbsp
+#wrapper.scrollable
+  %h2
+    %center {{choice_1st}}
+  %h2
+    %center {{choice_2st}}
+  %h2
+    %center {{choice_3st}}
+  %h2
+    %center {{choice_4st}}
+  %h2
+    %center {{choice_5st}}
+  %center
+    %button.btn.btn-large(ng-tap="begin_and_stop()" ) {{begin_and_stop_status}}
+
+
+

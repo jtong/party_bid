@@ -1,0 +1,26 @@
+.red {
+    color: red;
+}
+
+.ul-without-spots {
+    list-style: none;
+}
+.center{
+	margin: 0 auto;
+}
+.head_img_bgcolor{
+	background-color: #2735ff;
+}
+.float-left{
+	float:left
+}
+.float-right{
+	float:right
+}
+
+.yellow-color{
+    background-color: #f2c43d;
+}
+.high-blue-color{
+    background-color: #00ccff;
+}

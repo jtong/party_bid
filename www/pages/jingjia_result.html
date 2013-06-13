@@ -1,0 +1,8 @@
+<input type='button' ng-click='back()' value='返回'>
+<span>竞价</span>
+<input type='button' ng-click='todo()' value=列表>
+<ol>
+	<li ng-repeat='people in charge_peoples'>
+        {{people.name}} {{'￥'+people.price}} {{people.number}}
+	</li>
+</ol>

@@ -1,0 +1,24 @@
+%header
+  %h4 短信抽奖
+  .header-right
+    %a.btn-primary.btn(ng-tap="begin_lottery()" class="btn btn-primary")
+      &nbsp
+      登录
+      &nbsp
+  .header-left
+    %a.btn-primary.btn(ng-tap="clear_data()" class="btn btn-primary")
+      &nbsp
+      清空
+      &nbsp
+#wrapper
+  %br
+  %br
+  %h2
+    %center
+      %span(id="phone_count") 已经{{phone_count}}人参加
+
+  %br
+  %button.btn.btn-block.btn-large(ng-tap="choice_one()") 选一个
+  %br
+  %br
+  %button.btn.btn-block.btn-large(ng-tap="choice_five()") 选五个

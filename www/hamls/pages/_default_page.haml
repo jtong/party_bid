@@ -1,0 +1,11 @@
+%header
+  %h4 默认设置
+  .header-left
+    %a.btn-primary.btn(ng-tap="back_to_index()" class="btn btn-primary") 返回
+#wrapper.scrollable
+  %form.wrapper-inner
+    %fieldset.form-wrapper
+      %h5 默认用户
+      %input#user_name.input-full(type="text" placeholder="用户名" ng-model="username" )
+      %p.red
+      %a.btn.btn-block.btn-large(ng-tap="set_default()" ) 设定

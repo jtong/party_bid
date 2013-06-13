@@ -1,0 +1,62 @@
+function charge_baoming_controller($scope,$navigate)
+{
+    $scope.jingjia_begin=localStorage.getItem('begin_end_status');
+    $scope.back=function()
+    {
+        $navigate.go('/active_baoming');
+    }
+    $scope.begin=function()
+    {
+        if($scope.jingjia_begin=='结束')
+        {
+            if(confirm('确定结束吗'))
+            {
+                $scope.jingjia_begin=='开始';
+                localStorage.setItem('begin_end_status',$scope.jingjia_begin);
+                $navigate.go('/jingjia_result');
+            }
+        }
+    }
+    $scope.charge_peoples=JSON.parse(localStorage.getItem('charge_people_temp'));
+    $scope.charge_people_number=JSON.parse(localStorage.getItem('charge_people_number'));
+    $scope.charge_temp=function()
+    {
+        $scope.charge_peoples=JSON.parse(localStorage.getItem('charge_people_temp'));
+        console.log('已执行');
+        $scope.charge_people_number=JSON.parse(localStorage.getItem('charge_people_number'));
+        if($scope.charge_peoples.length==0)
+        {
+            $scope.charge_peoples=[{name:localStorage.getItem('charge_people_name'),price:lparseInt(localStorage.getItem('charge_people_price')),
+                number:localStorage.getItem('charge_people_phone')}];
+        }
+        else
+        {
+            $scope.charge_peoples.splice(0,0,{name:localStorage.getItem('charge_people_name'),price:parseInt(localStorage.getItem('charge_people_price')),
+                number:localStorage.getItem('charge_people_phone')});
+        }
+        localStorage.setItem('charge_people_temp',JSON.stringify($scope.charge_peoples));
+    }
+    if($scope.charge_peoples.length==0)
+    {
+        if(localStorage.getItem('charge_people_price') && localStorage.getItem('charge_people_phone'))
+        {
+            $scope.charge_peoples=[{name:localStorage.getItem('charge_people_name'),price:parseInt(localStorage.getItem('charge_people_price')),
+                number:localStorage.getItem('charge_people_phone')}]
+        }
+    }
+    else
+    {
+        if(localStorage.getItem('charge_people_price') && localStorage.getItem('charge_people_phone'))
+        {
+            $scope.charge_peoples.splice(0,0,{name:localStorage.getItem('charge_people_name'),price:parseInt(localStorage.getItem('charge_people_price')),
+                number:localStorage.getItem('charge_people_phone')});
+        }
+    }
+    localStorage.setItem('charge_people_temp',JSON.stringify($scope.charge_peoples));
+    if(localStorage.getItem('charge_people_phone') && localStorage.getItem('charge_people_price'))
+    {
+        localStorage.removeItem('charge_people_phone');
+        localStorage.removeItem('charge_people_price');
+        localStorage.removeItem('charge_people_name');
+    }
+}

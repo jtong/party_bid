@@ -1,0 +1,9 @@
+<input type='button' ng-click='back()' value='返回'>
+<span>竞价</span>
+<input type='button' ng-click='todo()' value='列表'>
+<ul>
+    <li ng-repeat='group in charge_collect'>
+        {{group.price}}   {{group.number}}
+    </li>
+</ul>
+<input type='button' ng-click='button_function()' ng-show='show_hide_status' value='更多'>

@@ -1,0 +1,67 @@
+function active_baoming_controller($scope,$navigate)
+{
+    $scope.people_number=JSON.parse(localStorage.getItem('people_number'));
+    $scope.flag='开始';
+    localStorage.setItem('nname',$scope.flag);
+    $scope.begin=function()
+    {
+        if($scope.flag=='开始')
+        {
+            $scope.flag='结束';
+            localStorage.setItem('nname',$scope.flag);
+        }
+        else
+        {
+            if(confirm("确定结束吗?"))
+            {
+                localStorage.setItem('nname',$scope.flag);
+                document.getElementById('btton').disabled='true';
+                $navigate.go('/jingjia_list');
+                return;
+            }
+        }
+    }
+
+    $scope.back=function()
+    {
+        $navigate.go('/actives');
+    }
+
+    $scope.baoming=function()
+    {
+        $navigate.go('/active_baoming');
+    }
+    $scope.jingjia=function()
+    {
+        $navigate.go('/active_jingjia');
+    }
+    if(localStorage.getItem('name')==null)
+    {
+        return;
+    }
+    $scope.peoples=JSON.parse(localStorage.getItem('people_temp'));
+    $scope.temp=function()
+    {
+        console.log('已执行');
+        $scope.people_number=JSON.parse(localStorage.getItem('people_number'));
+        if($scope.peoples.length==0)
+        {
+            $scope.peoples=[{name:localStorage.getItem('name'),number:localStorage.getItem('number')}]
+        }
+        else
+        {
+            $scope.peoples.splice(0,0,{name:localStorage.getItem('name'),number:localStorage.getItem('number')});
+        }
+        localStorage.setItem('people_temp',JSON.stringify($scope.peoples));
+    }
+    if($scope.peoples.length==0)
+    {
+        $scope.peoples=[{name:localStorage.getItem('name'),number:localStorage.getItem('number')}]
+    }
+    else
+    {
+        $scope.peoples.splice(0,0,{name:localStorage.getItem('name'),number:localStorage.getItem('number')});
+    }
+    localStorage.setItem('people_temp',JSON.stringify($scope.peoples));
+
+}

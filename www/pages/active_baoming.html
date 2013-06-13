@@ -1,0 +1,17 @@
+<span>
+	<input type='button' ng-click='back()' value='返回'>
+</span>
+<span>
+	报名{{people_number}}人
+</span>
+<span>
+	<input id='btton' type='button' ng-click='begin()' value={{flag}}>
+</span>
+<br>
+<ul>
+    <li id='player_list' ng-repeat='people in peoples'>{{people.name}}  {{people.number}}</li>
+</ul>
+<span ng-click='baoming()'>报名</span>
+<span> | </span>
+<span ng-click='jingjia()'>竞价</span>
+

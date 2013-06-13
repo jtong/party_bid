@@ -1,0 +1,7 @@
+<input type='button' ng-click='back()' value='返回'>
+<span>竞价{{charge_people_number}}人</span>
+<input id='jingjia_button' type='button' ng-click='begin()' 
+value={{jingjia_begin}}>
+<ol>
+    <li id='charge_list' ng-repeat='people in charge_peoples'>{{people.name}}<br>{{people.number}}</li>
+</ol>
