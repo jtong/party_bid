@@ -26,3 +26,4 @@ function make_active_controller($scope,$navigate)
         $navigate.go('/active_list');
 	}
 }
+

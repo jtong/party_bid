@@ -14,3 +14,4 @@ function active_list_controller($scope,$navigate)
         $navigate.go('/active_baoming');
     }
 }
+

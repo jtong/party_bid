@@ -21,3 +21,4 @@ function jingjia_list_controller($scope,$navigate)
     }
 }
 
+
