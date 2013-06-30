@@ -36,6 +36,8 @@ function charge_baoming_controller($scope,$navigate)
         }
         localStorage.setItem('charge_people_temp',JSON.stringify($scope.charge_peoples));
     }
+    //没事少在scope外面写代码,为什么要在这里写这些啊?
+    //只有及其特殊的情况下,才需要做这种事情,那也需要先封装成一个函数
     if($scope.charge_peoples.length==0)
     {
         if(localStorage.getItem('charge_people_price') && localStorage.getItem('charge_people_phone'))
